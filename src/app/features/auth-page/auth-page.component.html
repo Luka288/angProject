@@ -1,0 +1,139 @@
+<div class="wrapper">
+  <div class="loginReg">
+    <mat-tab-group
+      (selectedTabChange)="tabChange($event)"
+      [selectedIndex]="tabIndex"
+    >
+      <mat-tab label="Log In" class="widthRes">
+        <form class="example-form fix" [formGroup]="signUpForm">
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input
+              type="email"
+              matInput
+              [formGroup]="signUpForm"
+              placeholder="Enter email"
+              formControlName="email"
+              class="resetWidth"
+            />
+            @if (signUpForm.get("email")?.hasError("required")) {
+            <mat-error>Email is <strong>required</strong></mat-error>
+            } @if (signUpForm.get("email")?.hasError("email")) {
+            <mat-error>Please enter a valid email address</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input
+              type="password"
+              matInput
+              [formGroup]="signUpForm"
+              placeholder="Enter Password"
+              formControlName="password"
+            />
+            @if (signUpForm.get("password")?.hasError("required")) {
+            <mat-error>Password is <strong>required</strong></mat-error>
+            } @if (signUpForm.get("password")?.hasError("minLength")) {
+            <mat-error>Please enter more then 2 characters</mat-error>
+            } @if (signUpForm.get("password")?.hasError("maxLength")) {
+            <mat-error>Please enter less then 16 characters</mat-error>
+            }
+          </mat-form-field>
+          <button mat-raised-button (click)="signIn()">Log in</button>
+        </form>
+      </mat-tab>
+      <mat-tab label="Register">
+        <form class="example-form fix" [formGroup]="signUpForm">
+          <mat-form-field class="example-full-width">
+            <mat-label>First name</mat-label>
+            <input
+              type="text"
+              id="firstName"
+              matInput
+              [formGroup]="signUpForm"
+              placeholder="Enter First name"
+              formControlName="firstName"
+              class="resetWidth"
+            />
+            @if (signUpForm.get("firstName")?.hasError("required")) {
+            <mat-error>First name is <strong>required</strong></mat-error>
+            } @if (signUpForm.get("firstName")?.hasError("minlength")) {
+            <mat-error>Please enter more then 2 characters</mat-error>
+            } @if (signUpForm.get("firstName")?.hasError("maxlength")) {
+            <mat-error>Please enter less then 16 characters</mat-error>
+            }
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Last Name</mat-label>
+            <input
+              type="text"
+              matInput
+              [formGroup]="signUpForm"
+              placeholder="Enter Last Name"
+              formControlName="lastName"
+            />
+            @if (signUpForm.get("lastName")?.hasError("required")) {
+            <mat-error>Last Name is <strong>required</strong></mat-error>
+            } @if (signUpForm.get("lastName")?.hasError("minLength")) {
+            <mat-error>Please enter more then 2 characters</mat-error>
+            } @if (signUpForm.get("lastName")?.hasError("maxLength")) {
+            <mat-error>Please enter less then 16 characters</mat-error>
+            }
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input
+              type="email"
+              matInput
+              [formGroup]="signUpForm"
+              placeholder="Enter Email"
+              formControlName="email"
+            />
+            @if (signUpForm.get("email")?.hasError("required")) {
+            <mat-error>Email is <strong>required</strong></mat-error>
+            } @if (signUpForm.get("email")?.hasError("email")) {
+            <mat-error>Please enter a valid email address</mat-error>
+            }
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input
+              type="password"
+              matInput
+              [formGroup]="signUpForm"
+              placeholder="Enter Password"
+              formControlName="password"
+            />
+            @if (signUpForm.get("password")?.hasError("required")) {
+            <mat-error>Password is <strong>required</strong></mat-error>
+            } @if (signUpForm.get("password")?.hasError("minlength")) {
+            <mat-error>Please enter more then 8 characters</mat-error>
+            } @if (signUpForm.get("password")?.hasError("maxlength")) {
+            <mat-error>Please enter less then 22 characters</mat-error>
+            }
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Phone number</mat-label>
+            <span matTextPrefix> &nbsp;</span>
+            <input
+              type="tel"
+              matInput
+              placeholder="555-555-1234"
+              matInput
+              type="phone"
+              id="phone"
+              formControlName="phone"
+            />
+            @if (signUpForm.get("phone")?.hasError("required")) {
+            <mat-error>Phone number is <strong>required</strong></mat-error>
+            } @if (signUpForm.get("phone")?.hasError("minLength")) {
+            <mat-error>Please enter more then 2 characters</mat-error>
+            }
+          </mat-form-field>
+          <button mat-raised-button (click)="register()">Register</button>
+        </form>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

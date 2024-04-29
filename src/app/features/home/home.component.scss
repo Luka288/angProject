@@ -1,0 +1,436 @@
+.mainSection {
+  padding-top: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: #414e53;
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/698/917/306/minimalism-simple-blue-gradient-wallpaper-preview.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  //padding-top: 143px;
+
+  .contentBox {
+    width: 100%;
+    height: 100%;
+    // background-color: #353839;
+    // box-shadow: 0px 0px 30px -1px rgba(0, 0, 0, 0.48);
+    // -webkit-box-shadow: 0px 0px 30px -1px rgba(0, 0, 0, 0.48);
+    // -moz-box-shadow: 0px 0px 30px -1px rgba(0, 0, 0, 0.48);
+
+    .wrapBox {
+      display: flex;
+      justify-content: center;
+      height: 100%;
+
+      .carsuelSize {
+        width: 100%;
+        height: 100vh;
+
+        img {
+          width: 900px;
+          height: 100vh;
+        }
+      }
+    }
+
+    .bgSet {
+      background-color: black;
+    }
+    .mat-grid-list {
+      padding-top: 10px;
+      width: 93%;
+      height: 50%;
+
+      .mat-grid-tile {
+        img {
+          width: 100%;
+          height: 100%;
+          position: relative;
+        }
+        .HVR {
+          display: none;
+        }
+      }
+
+      .mat-grid-tile:hover .HVR {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: transparentize($color: #000000, $amount: 0.4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: beige;
+        font-size: xx-large;
+      }
+    }
+    .bottomContent {
+      width: 100%;
+
+      .line {
+        margin: auto;
+        width: 85%;
+        height: 1px;
+        background-color: white;
+      }
+
+      .line::before,
+      .line::after {
+        content: "";
+        top: 0;
+        width: 10px;
+        height: 10px;
+        background-color: white;
+      }
+
+      .leftInfo {
+        display: grid;
+        grid-template-columns: repeat(2, 3fr);
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 80%;
+        padding: 25px;
+        p {
+          color: white;
+        }
+
+        img {
+          width: 95%;
+          height: 300px;
+          background-attachment: fixed;
+        }
+      }
+
+      .bottomContentText {
+        text-align: center;
+        color: white;
+        text-transform: uppercase;
+      }
+
+      .littleAbout {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        height: 300px;
+
+        h3 {
+          width: 50%;
+        }
+      }
+    }
+    .rightInfo {
+      display: flex;
+      justify-content: space-between;
+      background-image: url("https://images4.alphacoders.com/130/1306181.jpeg");
+      background-position: center;
+      background-size: cover;
+      align-items: center;
+
+      .text {
+        margin: auto;
+        width: 30%;
+        height: 100%;
+        h2 {
+          font-size: 1.2em;
+          color: white;
+        }
+        ul {
+          li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid red;
+            width: 100px;
+            height: 45px;
+            text-align: center;
+            transition: ease-out 0.3s;
+            cursor: pointer;
+            a {
+              text-decoration: none;
+              color: white;
+            }
+          }
+          li:hover {
+            transition: ease-in 0.3s;
+            border-right: none;
+            border-left: none;
+          }
+        }
+      }
+
+      .imageDiv {
+        height: 100%;
+
+        image {
+        }
+      }
+    }
+
+    .soonContainer {
+      margin: auto;
+      color: white;
+      width: 80%;
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 26px;
+        text-align: center;
+      }
+
+      .forHigImg {
+        width: 512px;
+      }
+
+      .images {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2, 0fr);
+        gap: 30px;
+      }
+    }
+    .brandsInfo {
+      display: grid;
+      justify-content: space-around;
+      align-items: center;
+      grid-template-columns: repeat(3, 0fr);
+      background-image: url("https://images.assetsdelivery.com/compings_v2/bravissimos/bravissimos1806/bravissimos180600772.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      img {
+        width: 350px;
+      }
+
+      .prodAdvert {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 80%;
+        padding: 25px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .mainSection {
+    .contentBox {
+      .rightInfo {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 30px;
+
+        img {
+          width: 1024px;
+        }
+
+        .text {
+          width: 75%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .brandsInfo {
+        img {
+          width: 200px;
+        }
+      }
+
+      .soonContainer {
+        img {
+          width: 200px;
+        }
+
+        .forHigImg {
+          width: 200px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .mainSection {
+    .contentBox {
+      .bottomContent {
+        .leftInfo {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .rightInfo {
+          display: flex;
+          flex-direction: column-reverse;
+          gap: 30px;
+
+          img {
+            width: 768px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .mainSection {
+    .contentBox {
+      .bottomContent {
+        .leftInfo {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+
+          img {
+            width: 100%;
+            height: 150px;
+          }
+        }
+
+        .rightInfo {
+          display: flex;
+          flex-direction: column-reverse;
+          gap: 30px;
+
+          img {
+            width: 100%;
+            height: 150px;
+          }
+        }
+
+        .brandsInfo {
+          img {
+            width: 100px;
+          }
+        }
+
+        .soonContainer {
+          .title {
+            font-size: 20px;
+          }
+          .images {
+            img {
+              width: 188px;
+            }
+            .forHigImg {
+              width: 150px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .mainSection {
+    .contentBox {
+      .bottomContent {
+        .leftInfo {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          gap: 30px;
+
+          img {
+            width: 100%;
+            height: 100px;
+          }
+        }
+
+        .rightInfo {
+          display: flex;
+          flex-direction: column-reverse;
+          text-align: center;
+          gap: 30px;
+
+          img {
+            width: 100%;
+            height: 100px;
+          }
+        }
+
+        .aboutCompany {
+          text-align: center;
+        }
+
+        .soonContainer {
+          .title {
+            font-size: 20px;
+          }
+          .images {
+            img {
+              width: 150px;
+            }
+            .forHigImg {
+              width: 150px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .mainSection {
+    .contentBox {
+      .bottomContent {
+        .leftInfo {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          gap: 30px;
+
+          img {
+            width: 100%;
+            height: 100px;
+          }
+        }
+
+        .rightInfo {
+          display: flex;
+          flex-direction: column-reverse;
+          text-align: center;
+          gap: 30px;
+
+          img {
+            width: 100%;
+            height: 100px;
+          }
+        }
+
+        .aboutCompany {
+          text-align: center;
+        }
+
+        .soonContainer {
+          .title {
+            font-size: 20px;
+          }
+          .images {
+            display: grid;
+            grid-template-columns: repeat(1, 0fr);
+            img {
+              width: 150px;
+            }
+            .forHigImg {
+              width: 150px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

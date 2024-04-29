@@ -1,0 +1,100 @@
+<section>
+  <div class="cardWrap" *ngFor="let product of productInf">
+    <div class="imgSec">
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              [src]="product.thumbnail"
+              [alt]="product.title"
+              draggable="false"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              [src]="product.images[0]"
+              [alt]="product.title"
+              draggable="false"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              [src]="product.images[1]"
+              [alt]="product.title"
+              draggable="false"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              [src]="product.images[2]"
+              [alt]="product.title"
+              draggable="false"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="middleInfo">
+      <h2>
+        {{ product.title }}
+      </h2>
+      <h3>
+        {{ product.description }}
+      </h3>
+
+      <a>
+        {{ product.brand }}
+      </a>
+    </div>
+    <div class="sidePriceETC">
+      <h1>
+        {{ product.price.current }}
+        <span class="priceColor">
+          {{ product.price.currency }}
+        </span>
+      </h1>
+      <div class="buttonSection">
+        <a href="ll">Purchase</a>
+      </div>
+
+      <div class="paymentMethods">
+        <img
+          src="https://advanceddentalhygiene.com/wp-content/uploads/2023/02/pngkey.com-payment-methods-png-3987066.png"
+          alt=""
+        />
+      </div>
+
+      <div class="stock">
+        @if (product.stock < 10) {
+        <h2 style="color: red">
+          we have
+          {{ product.stock }} in the stock hurry up !
+        </h2>
+        }@else {
+        <h2>
+          we have
+          {{ product.stock }} in the stock !
+        </h2>
+        }
+      </div>
+    </div>
+  </div>
+</section>

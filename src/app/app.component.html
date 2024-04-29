@@ -1,0 +1,65 @@
+<header>
+  <section>
+    <div class="uper">
+      <div class="logo">
+        <div class="logoWrapper">
+          <h1 class="cursor" routerLink="/">SHOP.</h1>
+        </div>
+      </div>
+      <div class="search">
+        <input type="text" placeholder="search..." />
+
+        <a href="#" class="fix"
+          ><mat-icon>{{ "search" | translate }}</mat-icon></a
+        >
+      </div>
+      <div class="icons">
+        <button mat-button [matMenuTriggerFor]="menu">
+          <a><mat-icon>language</mat-icon></a>
+        </button>
+        <mat-menu #menu="matMenu">
+          @for (language of languages; track language.name) {
+          <button mat-menu-item (click)="switchLanguage(language.name)">
+            <span>{{ language.title | translate }}</span></button
+          >}
+        </mat-menu>
+        @if (user$ | async) {
+        <a href="#" style="width: 30px">
+          <mat-icon>favorite</mat-icon>
+        </a>
+        <a href="#" style="width: 30px">
+          <mat-icon>shopping_cart</mat-icon>
+        </a>
+        <a matButton [routerLink]="" (click)="logOut()" style="cursor: pointer"
+          >Log Out</a
+        >
+        @for (item of afterAuth; track item.title) {
+        <li style="list-style: none">
+          <a mat-button [routerLink]="item.path" class="cursor">{{
+            item.title
+          }}</a>
+        </li>
+        } }@else { @for (item of beforeAuth; track item.title) {
+        <li style="list-style: none">
+          <a mat-button [routerLink]="item.path" class="liStyle">{{
+            item.title
+          }}</a>
+        </li>
+        } }
+      </div>
+    </div>
+    <div class="down">
+      <nav>
+        <a class="bar" routerLink="">{{ "home" | translate }}</a>
+        <a class="bar" routerLink="shop">{{ "shop" | translate }}</a>
+        <a>{{ "about us" | translate }}</a>
+        <a>{{ "contact" | translate }}</a>
+        <div class="animation start-home"></div>
+      </nav>
+    </div>
+  </section>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<app-footer></app-footer>
